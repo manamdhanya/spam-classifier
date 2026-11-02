@@ -2,6 +2,9 @@
 import streamlit as st
 import joblib
 from pathlib import Path
+from threading import Thread
+
+from src.metrics_server import start_metrics_server, record_prediction
 
 MODEL_PATH = Path("models/best_model.joblib")
 
@@ -10,6 +13,12 @@ st.set_page_config(
     page_icon="📩",
     layout="centered"
 )
+
+# Start Prometheus metrics exporter
+def run_metrics_server():
+    start_metrics_server(port=8000)
+
+Thread(target=run_metrics_server, daemon=True).start()
 
 @st.cache_resource
 def load_model():
@@ -32,8 +41,11 @@ try:
 
             if prediction == 1:
                 st.error("🚨 This message is SPAM!")
+                record_prediction("spam")
             else:
                 st.success("✅ This message is HAM (Not Spam).")
+                record_prediction("ham")
+
         else:
             st.warning("Please enter a message first.")
 

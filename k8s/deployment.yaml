@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,11 +15,10 @@ spec:
     spec:
       containers:
         - name: spam-streamlit
-          image: spam-streamlit:1.0
+          image: sms-spam-classifier:v3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8501
-            - containerPort: 8000
           readinessProbe:
             httpGet:
               path: /_stcore/health
