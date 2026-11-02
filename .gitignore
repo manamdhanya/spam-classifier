@@ -1,0 +1,50 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dataset and generated features
+datasets/*
+!datasets/.gitkeep
+feature_store/
+data/
+
+# MLflow tracking
+mlruns/
+mlflow.db
+mlflow_backup.db
+
+# Model artifacts (keep trained model)
+# Keep best_model.joblib and metrics.json
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# OS and editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Terraform generated files
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan

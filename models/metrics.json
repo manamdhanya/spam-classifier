@@ -1,0 +1,43 @@
+{
+  "best_model": "NaiveBayes_a0.3",
+  "metrics": {
+    "accuracy": 0.9835271317829457,
+    "precision": 1.0,
+    "recall": 0.8702290076335878,
+    "f1": 0.9306122448979591
+  },
+  "confusion_matrix": [
+    [
+      901,
+      0
+    ],
+    [
+      17,
+      114
+    ]
+  ],
+  "train_rows": 4126,
+  "test_rows": 1032,
+  "trained_at": "2026-11-02T11:39",
+  "mlflow_run_id": "0f661cc55dcc4979ba9fdba4d09af450",
+  "all_runs": {
+    "NaiveBayes_a1.0": {
+      "accuracy": 0.9738372093023255,
+      "precision": 1.0,
+      "recall": 0.7938931297709924,
+      "f1": 0.8851063829787233
+    },
+    "NaiveBayes_a0.3": {
+      "accuracy": 0.9835271317829457,
+      "precision": 1.0,
+      "recall": 0.8702290076335878,
+      "f1": 0.9306122448979591
+    },
+    "LinearSVM_C1.0": {
+      "accuracy": 0.9825581395348837,
+      "precision": 0.952,
+      "recall": 0.9083969465648855,
+      "f1": 0.9296875
+    }
+  }
+}
